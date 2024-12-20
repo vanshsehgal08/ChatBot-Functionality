@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  pre {
+    @apply relative p-4 my-4 bg-gray-900 dark:bg-black rounded-lg overflow-x-auto;
+  }
+
+  code {
+    @apply font-mono text-sm;
+  }
+
+  .prose pre {
+    @apply bg-gray-900 dark:bg-black;
+  }
+
+  .prose code {
+    @apply text-gray-200;
+  }
+
+  .hljs {
+    @apply bg-transparent;
+  }
+}
