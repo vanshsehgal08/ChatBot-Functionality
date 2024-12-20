@@ -1,4 +1,4 @@
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 const API_REQUEST_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${GOOGLE_API_KEY}`;
 
 export const sendMessage = async (message: string) => {
@@ -17,5 +17,5 @@ export const sendMessage = async (message: string) => {
   const responseText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
   if (!responseText) throw new Error("Invalid API response.");
 
-  return { responseText, data};
+  return { responseText, data };
 };
